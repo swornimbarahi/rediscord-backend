@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 //connect to db
-mongoose.connect('mongodb+srv://swornimbarahi:<swornimbarahi>@cluster0-hlrxe.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect(process.env.DB_CONNECT,
   {
     useNewUrlParser: true
   },
@@ -11,6 +11,7 @@ mongoose.connect('mongodb+srv://swornimbarahi:<swornimbarahi>@cluster0-hlrxe.mon
     console.log('Connected to DB!');
   }
 )
+
 
 
 // import routes
